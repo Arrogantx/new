@@ -1,0 +1,19 @@
+.back-to{
+    position: absolute;
+    bottom: 25vh;
+    z-index: 999;
+    span{
+        position: relative;
+        z-index: 9999 !important;
+        color: var(--yellow);
+        font-size: 15px;
+        animation: blink 2.5s infinite ease-in-out;
+        text-shadow: -1px -1px #000, 0 -1px #000, 1px -1px #000, 1px 0 #000, 1px 1px #000, 0 1px #000, -1px 1px #000, -1px 0 #000;
+        &:hover{
+            color: rgba(255, 255, 255, 0.9);
+        }
+        @media screen and (max-width: 480px) {
+            font-size: 12px;
+          }
+    }
+}

@@ -1,0 +1,56 @@
+.events-bg {
+    background: url("../../assets/bg.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 89.5%;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    filter: brightness(110%) contrast(138%);
+    @media screen and (max-width: 480px) {
+      height: 84%;
+    }
+    .flicker {
+        width: 100%;
+        height: 100%;
+        border-radius: 1.4rem;
+        position: absolute;
+        overflow: hidden;
+        background: transparent;
+        &::before{
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            pointer-events: none;
+            background: linear-gradient(hsla(0, 6%, 7%, 0) 50%, rgba(0, 0, 0, .25) 0), linear-gradient(90deg, rgba(255, 0, 0, .06), rgba(0, 255, 0, .02), rgba(0, 0, 255, .06));
+            z-index: 99999;
+            background-size: 100% 2px,3px 100%;
+            border-radius: 1.5rem;
+          }
+        .star-content{
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          border-radius: 1.5rem;
+        }
+        video{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+          opacity: 1;
+        }
+      }
+  }
+
+  

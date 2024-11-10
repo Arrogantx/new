@@ -1,0 +1,201 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.store-carousel {
+  background: transparent !important;
+  position: absolute;
+  width: 100%;
+  height: 85vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .slick-slider {
+    margin-top: 10vh;
+    .slick-arrow{
+        &::before{
+            display: none;
+        }
+    }
+    .slick-prev{
+      z-index: 3;
+        margin-left: 2rem;
+        &:hover{
+            color: #ffd500 !important;
+        }
+        &::after{
+            content: "<";
+            position: absolute;
+            text-shadow: -1px -1px #000, 0 -1px #000, 1px -1px #000, 1px 0 #000, 1px 1px #000, 0 1px #000, -1px 1px #000, -1px 0 #000;
+            font-size: 35px;
+            font-family: 'Atari Classic Int', sans-serif;
+            color: #fff;
+            cursor: url("../../assets/svgviewer-output.svg") 1 1, auto;
+            &:hover{
+                color: #ffd500 !important;
+            }
+        }
+    }
+    .slick-next{
+        margin-right: 4rem;;
+        &:hover{
+            color: #ffd500 !important;
+        }
+        &::after{
+            content: ">";
+            position: absolute;
+            text-shadow: -1px -1px #000, 0 -1px #000, 1px -1px #000, 1px 0 #000, 1px 1px #000, 0 1px #000, -1px 1px #000, -1px 0 #000;
+            font-size: 35px;
+            font-family: 'Atari Classic Int', sans-serif;
+            color: #fff;
+            z-index: 9999 !important;
+            cursor: url("../../assets/svgviewer-output.svg") 1 1, auto;
+            &:hover{
+                color: rgb(255, 213, 0) !important;
+            }
+        }
+    }
+    .slick-list {
+      .slick-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s ease;
+      }
+      .image-gallery-item {
+        max-width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+          max-width: 250px !important;
+          filter: contrast(125%);
+        }
+        
+      }
+
+      .slick-active {
+        &:nth-child(1) {
+          img {
+            max-width: 20px !important;
+          }
+        }
+      }
+    }
+  }
+  .image-gallery-description {
+    text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    h3 {
+      filter: drop-shadow(0 -1px 0 rgb(0 0 0 / 0.7))
+        drop-shadow(0 1px 0 rgb(0 0 0 / 0.7))
+        drop-shadow(1px 0 0 rgb(0 0 0 / 0.7))
+        drop-shadow(-1px 0 0 rgb(0 0 0 / 0.7));
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7), 1px 0 0 rgba(0, 0, 0, 0.4),
+        -1px 0 0 rgba(0, 0, 0, 0.4);
+      color: #fff;
+      line-height: 24px;
+      font-size: 15px;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      @media screen and (max-width: 480px) {
+        max-width: 80%;
+      }
+    }
+    button{
+      width: 100%;
+      max-width: 448px;
+      padding: 1.3rem 0;
+      background: #000;
+      color: #fff;
+      font-size: 14px;
+      font-family: 'Atari Classic Int', sans-serif;
+      text-transform: uppercase;
+      border: none;
+      position: relative;
+      border-radius: 10px;
+      @media screen and (max-width: 480px) {
+        max-width: 80%;
+      }
+      &:hover{
+        background: #4306e9;
+      }
+      span{
+        position: absolute;
+        color: var(--yellow);
+        font-size: 12px;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7), 1px 0 0 rgba(0, 0, 0, 0.8),
+        -1px 0 0 rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.6);
+        padding: 4px 8px;
+        border-radius: 10px;
+        right: 0;
+        top: -10px;
+      }
+    }
+  }
+  .slides-menu{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .top{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      h3{
+        text-shadow: -1px -1px #000, 0 -1px #000, 1px -1px #000, 1px 0 #000, 1px 1px #000, 0 1px #000, -1px 1px #000, -1px 0 #000;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 16px;
+       
+      }
+      .arrow{
+        transform: rotate(90deg);
+        color: #fff;
+        text-shadow: -1px -1px #000, 0 -1px #000, 1px -1px #000, 1px 0 #000, 1px 1px #000, 0 1px #000, -1px 1px #000, -1px 0 #000;
+        animation: blink 1s linear infinite;
+        font-size: 14px;
+      }
+    }
+    .menu{
+      margin-top: 10px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #fff;
+      border-radius: 5px;
+      border: 1px solid #222;
+      padding: 1rem;
+      span{
+        color: #000;
+        font-size: 12px;
+        font-weight: lighter;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding-bottom: 3px;
+        position: relative;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    
+  }
+}
+
+@media only screen and (min-device-width: 375px) {
+  .header-wrapper {
+    padding: 1rem;
+  }
+}
+.image-gallery-slides .image-gallery-image {
+  max-width: 300px;
+}
